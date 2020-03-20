@@ -1,0 +1,27 @@
+server: 
+  port: 8001
+
+  
+spring: 
+  application: 
+    name: payment-service-8001
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/starter?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false&useInformationSchema=true
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+mybatis: 
+  type-aliases-package: com.xie.mapper
+  mapper-locations: classpath:/mybatis-mappers/*
+  configuration:
+    mapUnderscoreToCamelCase: true
+  
+  
